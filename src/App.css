@@ -1,0 +1,383 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-container {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.header {
+  background: #89031C;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-fiat {
+  display: inline-block;
+  background: #89031C;
+  padding: 0.5rem 1.25rem;
+  border: 4px solid #e5e5e5;
+  border-radius: 8px;
+}
+
+.logo-fiat-img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.content-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 3rem;
+}
+
+.title {
+  text-align: center;
+  color: #333;
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.section-title {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Grilla de vehículos */
+.vehiculos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 1200px) {
+  .vehiculos-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .vehiculos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.vehiculo-card {
+  background: white;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e5e5e5;
+  text-align: center;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vehiculo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-color: #89031C;
+}
+
+.vehiculo-card.selected {
+  background: #89031C;
+  color: white;
+  border-color: #89031C;
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(137, 3, 28, 0.4);
+}
+
+.vehiculo-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.vehiculo-card.selected .vehiculo-name {
+  color: white;
+}
+
+/* Input DNI */
+.dni-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 1.2rem;
+  font-size: 1.3rem;
+  border: 2px solid #e5e5e5;
+  border-radius: 12px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  color: #333;
+}
+
+.dni-input:focus {
+  outline: none;
+  border-color: #89031C;
+}
+
+/* Switch de método de pago */
+.metodo-pago-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.metodo-pago-container span.active {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #89031C;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #89031C;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Botón calcular */
+.btn-calcular {
+  display: block;
+  margin: 3rem auto 0;
+  padding: 1.5rem 4rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: white;
+  background: #89031C;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-calcular:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(137, 3, 28, 0.4);
+  background: #6a0216;
+}
+
+.btn-calcular:active {
+  transform: translateY(-1px);
+}
+
+/* Loading */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.spinner {
+  width: 80px;
+  height: 80px;
+  border: 8px solid rgba(137, 3, 28, 0.2);
+  border-top-color: #89031C;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-text {
+  color: #333;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Resultado */
+.resultado-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.resultado-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  border: 3px solid #89031C;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 500px;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.resultado-title {
+  color: #89031C;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.resultado-vehiculo {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.resultado-precio {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 2rem;
+  background: #89031C;
+  border-radius: 15px;
+}
+
+.precio-label {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.precio-valor {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.resultado-metodo {
+  color: #666;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.btn-reset {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  color: white;
+  background: #89031C;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-reset:hover {
+  background: #6a0216;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    padding: 1.5rem;
+  }
+
+  .vehiculos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .vehiculo-name {
+    font-size: 1rem;
+  }
+
+  .vehiculo-card {
+    padding: 1.5rem 1rem;
+    min-height: 80px;
+  }
+
+  .btn-calcular {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .precio-valor {
+    font-size: 2rem;
+  }
+
+  .dni-input {
+    font-size: 1.1rem;
+  }
+
+  .logo-fiat-text {
+    font-size: 2.5rem;
+  }
+}
