@@ -25,6 +25,7 @@ function App() {
       return
     }
 
+    window.scrollTo({ top: 0, behavior: 'smooth' })
     setLoading(true)
     setResultado(null)
 
@@ -64,7 +65,7 @@ function App() {
               <div className="resultado-precio">
                 <span className="precio-label">Primera Cuota</span>
                 <span className="precio-valor">
-                  ${resultado.toLocaleString('es-AR')}
+                  ${resultado.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                 </span>
               </div>
               <div className="resultado-metodo">
