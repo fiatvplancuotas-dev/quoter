@@ -1,46 +1,46 @@
 {
   "Titano": {
-    "tarjeta_credito": 570000,
-    "cbu": 670000
+    "tarjeta_credito": 572000,
+    "cbu": 672000
   },
   "Toro": {
+    "tarjeta_credito": 550000,
+    "cbu": 650000
+  },
+  "Strada": {
+    "tarjeta_credito": 502000,
+    "cbu": 602000
+  },
+  "Fiorino": {
+    "tarjeta_credito": 425000,
+    "cbu": 525000
+  },
+  "Fastback": {
+    "tarjeta_credito": 533000,
+    "cbu": 633000
+  },
+  "Pulse": {
+    "tarjeta_credito": 494000,
+    "cbu": 594000
+  },
+  "Argo": {
+    "tarjeta_credito": 430000,
+    "cbu": 530000
+  },
+  "Mobi": {
+    "tarjeta_credito": 383000,
+    "cbu": 483000
+  },
+  "Cronos 70-30": {
+    "tarjeta_credito": 498000,
+    "cbu": 598000
+  },
+  "Cronos 80-20": {
     "tarjeta_credito": 547000,
     "cbu": 647000
   },
-  "Strada": {
-    "tarjeta_credito": 500000,
-    "cbu": 600000
-  },
-  "Fiorino": {
-    "tarjeta_credito": 424000,
-    "cbu": 524000
-  },
-  "Fastback": {
-    "tarjeta_credito": 531000,
-    "cbu": 631000
-  },
-  "Pulse": {
-    "tarjeta_credito": 493000,
-    "cbu": 593000
-  },
-  "Argo": {
-    "tarjeta_credito": 428000,
-    "cbu": 528000
-  },
-  "Mobi": {
-    "tarjeta_credito": 381000,
-    "cbu": 481000
-  },
-  "Cronos 70-30": {
-    "tarjeta_credito": 496000,
-    "cbu": 596000
-  },
-  "Cronos 80-20": {
-    "tarjeta_credito": 545000,
-    "cbu": 645000
-  },
   "Cronos 90-10": {
-    "tarjeta_credito": 595000,
-    "cbu": 695000
+    "tarjeta_credito": 597000,
+    "cbu": 697000
   }
 }
